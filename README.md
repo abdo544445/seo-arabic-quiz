@@ -1,10 +1,10 @@
-# اختبار أساسيات الـ SEO (Arabic SEO Quiz) 🚀
+# اختبار المفاهيم التقنية: SEO • n8n والأتمتة • Laravel API 🚀
 
 [![Deploy to GitHub Pages](https://github.com/abdo544445/seo-arabic-quiz/actions/workflows/deploy.yml/badge.svg)](https://github.com/abdo544445/seo-arabic-quiz/actions/workflows/deploy.yml)
 [![GitHub Pages](https://img.shields.io/badge/Live-Demo-2563eb?style=flat&logo=github)](https://abdo544445.github.io/seo-arabic-quiz/)
 [![RTL Supported](https://img.shields.io/badge/Language-Arabic%20(RTL)-emerald)](https://abdo544445.github.io/seo-arabic-quiz/)
 
-تطبيق ويب تفاعلي لاختبار وقياس المعرفة في أساسيات **تحسين محركات البحث (SEO)** باللغة العربية، يضم 30 سؤالاً شاملاً تغطي الجوانب النظرية والعملية الأكثر أهمية.
+تطبيق ويب تفاعلي متقدم لاختبار وتقييم المعارف التقنية والأساسيات عبر **30 سؤالاً عملياً** مقسمة إلى 3 أقسام رئيسية مع توضيحات مفصلة لكل مفهوم:
 
 ---
 
@@ -13,36 +13,36 @@
 
 ---
 
-## 🎯 المواضيع المغطاة في الاختبار
+## 🎯 الأقسام والمواضيع في الاختبار
 
-1. **مفاهيم محركات البحث الأساسية:** آلية العمل (Crawling, Indexing, Ranking).
-2. **On-Page SEO:** وسوم العناوين (H1-H6)، نية البحث (Search Intent)، الكلمات المفتاحية الطويلة (Long-Tail)، تحسين الصور (Alt Text).
-3. **Technical SEO:** ملف `robots.txt`، خريطة الموقع `sitemap.xml`، مقاييس الأداء الأساسية (Core Web Vitals - LCP)، الروابط الكنسية (`Canonical URL`)، وإعادة التوجيه (301 Redirects)، وبيانات الـ Schema.
-4. **Off-Page SEO:** جودة الروابط الخلفية (Backlinks)، معايير الجودة وموثوقية المحتوى (E-E-A-T).
-5. **SEO المحلي وعوامل التوافق:** الـ Local SEO، وتوافق الهواتف الذكية (Mobile-First Indexing).
+1. **🔍 تحسين محركات البحث SEO (الأسئلة 1 - 10):**
+   - بنية الموقع، السيو الداخلي (On-Page)، السيو التقني (Technical SEO)، ملفات `robots.txt` و `sitemap.xml`.
+   - معايير Core Web Vitals وتوافق الجوال والأمان بروتوكول HTTPS.
+
+2. **⚡ الأتمتة و n8n (الأسئلة 11 - 20):**
+   - منصة الأتمتة n8n، مشغلات الويب هوك (Webhooks)، وجدولة المهام (Cron).
+   - معالجة مصفوفات البيانات (JSON Arrays)، الـ Error Trigger، وإعادة المحاولات التلقائية (Retries).
+
+3. **🚀 Laravel API (الأسئلة 21 - 30):**
+   - تصميم واجهات برمجة التطبيقات (RESTful API) في Laravel.
+   - التحقق من البيانات (Form Requests)، موارد التحويل (API Resources)، التوثيق والرموز (Sanctum / Passport).
+   - المعاملات البنكية/المالية وحماية البيانات (`DB::transaction`).
 
 ---
 
-## 🛠️ التقنيات المستخدمة
+## 🛠️ المميزات التقنية
 
-- **HTML5 & Vanilla JavaScript**: كود خفيف وسريع بدون أي اعتمادات معقدة.
-- **Tailwind CSS (CDN)**: تصميم أنيق وعصري متوافق مع كافة الشاشات (Desktop & Mobile).
-- **خط تجوال (Tajawal Font)**: من Google Fonts لقراءة مريحة ودعم كامل للغة العربية (RTL).
-- **Canvas Confetti**: احتفال تفاعلي عند تحقيق نتيجة مرتفعة.
-- **GitHub Pages & GitHub Actions**: استضافة سحابية وتحديث تلقائي فور كل تعديل.
+- **تصميم تفاعلي كامل** مع تنقل سلس بين الأقسام والأسئلة وحفظ التقدم.
+- **تغذية راجعة وتوضيح تعليمي فوري** لكل إجابة لتعزيز المفاهيم البرمجية.
+- **دعم كامل للغة العربية (RTL)** وتصميم متجاوب 100% مع جميع أحجام الشاشات.
+- **نشر سحابي فوري** عبر GitHub Pages و GitHub Actions.
 
 ---
 
 ## 💻 التشغيل محلياً
 
-لا تحتاج إلى تثبيت أي حزم، فقط:
-1. قم باستنساخ المستودع:
+1. استنساخ المستودع:
    ```bash
    git clone https://github.com/abdo544445/seo-arabic-quiz.git
    ```
-2. افتح ملف `index.html` في أي متصفح ويب.
-
----
-
-## 📄 الترخيص
-هذا المشروع مفتوح المصدر ومتاح للجميع للتعلم والمشاركة.
+2. فتح `index.html` في أي متصفح.
