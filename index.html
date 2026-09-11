@@ -160,8 +160,7 @@
         <div class="flex items-center justify-between mb-3 text-xs font-semibold text-slate-500">
           <span>خريطة الأسئلة (30 سؤالاً)</span>
           <div class="flex items-center gap-3">
-            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span> صحيح</span>
-            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block"></span> خطأ</span>
+            <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-blue-600 inline-block"></span> تم الاختيار</span>
             <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-slate-200 inline-block"></span> غير مجاب</span>
           </div>
         </div>
@@ -777,19 +776,16 @@
       // Update Section Tabs
       updateCategoryTabs(currentIndex);
 
-      // Status indicator
+      // Status indicator (does not reveal correct/wrong until end of test)
       if (answerState.selectedIndex === null) {
-        questionStatus.innerText = "لم تتم الإجابة بعد";
+        questionStatus.innerText = "لم يتم الاختيار بعد";
         questionStatus.className = "text-xs font-semibold text-slate-400";
-      } else if (answerState.isCorrect) {
-        questionStatus.innerText = "✓ إجابة صحيحة";
-        questionStatus.className = "text-xs font-bold text-emerald-600";
       } else {
-        questionStatus.innerText = "✕ إجابة خاطئة";
-        questionStatus.className = "text-xs font-bold text-rose-500";
+        questionStatus.innerText = "تم تسجيل اختيارك ✓";
+        questionStatus.className = "text-xs font-bold text-blue-600";
       }
 
-      // Hide Hint initially
+      // Hide Hint during quiz (hints appear at final review)
       hintBox.classList.add("hidden");
 
       // Options Rendering
@@ -799,40 +795,28 @@
       q.options.forEach((opt, idx) => {
         const optionBtn = document.createElement("button");
         optionBtn.type = "button";
-        optionBtn.className = getOptionStyle(idx, answerState, q.correct);
+        optionBtn.className = getOptionStyle(idx, answerState);
         
         optionBtn.innerHTML = `
           <div class="flex items-center gap-3 text-right w-full">
-            <span class="w-8 h-8 rounded-xl font-bold text-xs flex items-center justify-center shrink-0 border transition-all ${getLetterBadgeStyle(idx, answerState, q.correct)}">
+            <span class="w-8 h-8 rounded-xl font-bold text-xs flex items-center justify-center shrink-0 border transition-all ${getLetterBadgeStyle(idx, answerState)}">
               ${optionLetters[idx]}
             </span>
             <span class="text-xs sm:text-sm font-medium flex-1">${opt}</span>
           </div>
         `;
 
-        // If not answered yet, clicking selects answer
-        if (answerState.selectedIndex === null) {
-          optionBtn.onclick = () => selectAnswer(idx);
-        } else {
-          // If already answered, keep button disabled to preserve test flow
-          optionBtn.disabled = true;
-          optionBtn.classList.add("cursor-default");
-        }
+        // User can freely select or change their choice anytime before submitting
+        optionBtn.onclick = () => selectAnswer(idx);
 
         optionsContainer.appendChild(optionBtn);
       });
-
-      // Show Hint ONLY if answered WRONG (Strict User Requirement)
-      if (answerState.selectedIndex !== null && !answerState.isCorrect) {
-        hintText.innerText = q.hint;
-        hintBox.classList.remove("hidden");
-      }
 
       // Navigation Controls
       prevBtn.disabled = (currentIndex === 0);
       
       const allAnswered = userAnswers.every(ans => ans.selectedIndex !== null);
-      if (allAnswered) {
+      if (allAnswered || currentIndex === questions.length - 1) {
         finishBtn.classList.remove("hidden");
         finishBtn.classList.add("inline-flex");
       } else {
@@ -843,8 +827,8 @@
       updateGridButtons();
     }
 
-    // Get style classes for each multiple-choice option
-    function getOptionStyle(idx, answerState, correctIdx) {
+    // Get style classes for each option (neutral selection highlight, no answer reveal)
+    function getOptionStyle(idx, answerState) {
       const base = "w-full text-right p-3 sm:p-4 rounded-2xl border transition-all flex items-center justify-between ";
 
       // Unanswered state
@@ -852,40 +836,21 @@
         return base + "bg-white border-slate-200/90 text-slate-800 hover:border-blue-400 hover:bg-blue-50/30 active:scale-[0.99]";
       }
 
-      // Answered: user picked this one and it's correct
-      if (idx === answerState.selectedIndex && answerState.isCorrect) {
-        return base + "bg-emerald-50/80 border-emerald-400 text-emerald-950 font-semibold ring-1 ring-emerald-300";
+      // Selected by user
+      if (idx === answerState.selectedIndex) {
+        return base + "bg-blue-50/90 border-blue-500 text-blue-950 font-semibold ring-2 ring-blue-400/30 shadow-xs";
       }
 
-      // Answered: user picked this one and it's wrong
-      if (idx === answerState.selectedIndex && !answerState.isCorrect) {
-        return base + "bg-rose-50/80 border-rose-400 text-rose-950 font-semibold ring-1 ring-rose-300";
-      }
-
-      // Answered: this is the true correct option after user made a mistake
-      if (idx === correctIdx && !answerState.isCorrect) {
-        return base + "bg-emerald-50/50 border-emerald-300 text-emerald-900 font-medium";
-      }
-
-      // Other neutral options when answered
-      return base + "bg-slate-50/70 border-slate-200 text-slate-400 opacity-60";
+      // Other options
+      return base + "bg-white border-slate-200 text-slate-700 hover:border-blue-300 hover:bg-slate-50";
     }
 
     // Get letter badge style (أ، ب، ج، د)
-    function getLetterBadgeStyle(idx, answerState, correctIdx) {
-      if (answerState.selectedIndex === null) {
-        return "bg-slate-100 border-slate-200 text-slate-600";
+    function getLetterBadgeStyle(idx, answerState) {
+      if (idx === answerState.selectedIndex) {
+        return "bg-blue-600 border-blue-700 text-white shadow-xs";
       }
-      if (idx === answerState.selectedIndex && answerState.isCorrect) {
-        return "bg-emerald-500 border-emerald-600 text-white";
-      }
-      if (idx === answerState.selectedIndex && !answerState.isCorrect) {
-        return "bg-rose-500 border-rose-600 text-white";
-      }
-      if (idx === correctIdx && !answerState.isCorrect) {
-        return "bg-emerald-100 border-emerald-300 text-emerald-700";
-      }
-      return "bg-slate-100 border-slate-200 text-slate-400";
+      return "bg-slate-100 border-slate-200 text-slate-600";
     }
 
     // Handle picking an option
@@ -899,13 +864,13 @@
         isCorrect: isCorrect
       };
 
-      // Re-render question to show instant visual feedback & hint if wrong
+      // Re-render question to show selected choice
       renderCurrentQuestion();
       updateGlobalProgress();
 
-      // Check if this was the last question answered
+      // Check if all questions or on last question
       const allAnswered = userAnswers.every(ans => ans.selectedIndex !== null);
-      if (allAnswered) {
+      if (allAnswered || currentIndex === questions.length - 1) {
         finishBtn.classList.remove("hidden");
         finishBtn.classList.add("inline-flex");
       }
@@ -964,10 +929,8 @@
 
         if (ans.selectedIndex === null) {
           baseClass += "bg-white border-slate-200 text-slate-700 hover:bg-slate-50";
-        } else if (ans.isCorrect) {
-          baseClass += "bg-emerald-500 border-emerald-600 text-white";
         } else {
-          baseClass += "bg-rose-500 border-rose-600 text-white";
+          baseClass += "bg-blue-600 border-blue-700 text-white shadow-xs";
         }
 
         btn.className = baseClass;
@@ -983,11 +946,14 @@
       progressStats.innerText = `${answeredCount} / ${questions.length} مكتمل`;
     }
 
-    // Reveal Full Results (Only allowed after solving all 30 questions)
+    // Reveal Full Results
     function showResultsView() {
       const allAnswered = userAnswers.every(ans => ans.selectedIndex !== null);
       if (!allAnswered) {
-        return; // Guardrail
+        const remaining = userAnswers.filter(a => a.selectedIndex === null).length;
+        if (!confirm(`يوجد ${remaining} سؤالاً لم تقم باختيار إجابة لها بعد. هل ترغب في تسليم الاختبار وعرض النتيجة والإجابات الصحيحة النموذجية الآن؟`)) {
+          return;
+        }
       }
 
       // Hide quiz view, show results view
