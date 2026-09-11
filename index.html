@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار أساسيات SEO | تحسين محركات البحث</title>
+    <meta name="description" content="اختبار تفاعلي شامل لقياس المعرفة في أساسيات تحسين محركات البحث (SEO) باللغة العربية مع نتائج وتغذية راجعة فورية.">
+    <meta name="keywords" content="SEO, تحسين محركات البحث, اختبار سيو, On-Page SEO, Technical SEO, Backlinks, محركات البحث">
+    <meta property="og:title" content="اختبار أساسيات SEO">
+    <meta property="og:description" content="اختبر معلوماتك في تحسين محركات البحث (SEO) عبر 30 سؤالاً تفاعلياً.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔍</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+            min-height: 100vh;
+        }
+        .option-btn {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .option-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.15);
+            border-color: #3b82f6;
+        }
+        .correct { 
+            background-color: #10B981 !important; 
+            color: white !important; 
+            border-color: #10B981 !important; 
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3) !important;
+        }
+        .wrong { 
+            background-color: #EF4444 !important; 
+            color: white !important; 
+            border-color: #EF4444 !important; 
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3) !important;
+        }
+        .progress-bar-fill {
+            transition: width 0.35s ease;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center p-4 sm:p-6 md:p-8">
+
+    <main class="max-w-3xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 my-auto">
+        <!-- Header -->
+        <header class="bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-700 p-6 sm:p-8 text-white text-center relative overflow-hidden">
+            <div class="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+            <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-indigo-500/20 rounded-full blur-xl pointer-events-none"></div>
+            
+            <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold mb-3 tracking-wide">
+                <span>⚡ 30 سؤالاً شاملاً</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-extrabold mb-2 tracking-tight">اختبار أساسيات SEO</h1>
+            <p class="text-blue-100 text-sm sm:text-base max-w-xl mx-auto font-medium">
+                اختبر معلوماتك في تحسين محركات البحث بناءً على أفضل الممارسات والمعايير العالمية
+            </p>
+        </header>
+
+        <!-- Start Screen -->
+        <section id="start-screen" class="p-6 sm:p-10 text-center">
+            <div class="w-20 h-20 mx-auto mb-6 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-4xl shadow-inner">
+                🎯
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">مرحباً بك في اختبار السيو!</h2>
+            <p class="text-gray-600 mb-8 leading-relaxed max-w-xl mx-auto text-base sm:text-lg">
+                يحتوي هذا الاختبار على <strong>30 سؤالاً عملياً</strong> في أساسيات تحسين محركات البحث (On-Page, Technical, Off-Page, Core Web Vitals). 
+                انقر على زر البدء لتبدأ التحدي وقياس مستواك المعرفي.
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 max-w-lg mx-auto text-sm text-gray-600">
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                    <span class="block text-2xl font-bold text-blue-600 mb-1">30</span>
+                    <span>سؤالاً متنوعاً</span>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                    <span class="block text-2xl font-bold text-emerald-600 mb-1">فوري</span>
+                    <span>تصحيح مباشر</span>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                    <span class="block text-2xl font-bold text-indigo-600 mb-1">شامل</span>
+                    <span>تقييم نهائي</span>
+                </div>
+            </div>
+
+            <button id="start-btn" onclick="startQuiz()" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-bold py-4 px-10 rounded-xl shadow-lg shadow-blue-500/30 transition duration-200 text-lg">
+                ابدأ الاختبار الآن 🚀
+            </button>
+        </section>
+
+        <!-- Quiz Screen -->
+        <section id="quiz-screen" class="p-6 sm:p-10 hidden">
+            <div class="flex justify-between items-center mb-5 text-sm sm:text-base">
+                <span class="text-gray-500 font-bold flex items-center gap-2" id="question-tracker">
+                    <span class="inline-block w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+                    السؤال 1 من 30
+                </span>
+                <span class="bg-blue-50 text-blue-700 py-1.5 px-4 rounded-full font-bold border border-blue-100" id="score-tracker">
+                    النتيجة: 0
+                </span>
+            </div>
+            
+            <div class="w-full bg-slate-100 rounded-full h-3 mb-8 overflow-hidden">
+                <div id="progress-bar" class="progress-bar-fill bg-gradient-to-r from-blue-500 to-indigo-600 h-3 rounded-full" style="width: 0%"></div>
+            </div>
+
+            <h2 id="question-text" class="text-xl sm:text-2xl font-bold text-gray-800 mb-6 leading-relaxed"></h2>
+            
+            <div id="options-container" class="space-y-3 mb-8" role="radiogroup">
+                <!-- Options will be generated here -->
+            </div>
+
+            <div class="flex items-center justify-between pt-4 border-t border-slate-100 hidden" id="next-btn-container">
+                <span id="feedback-hint" class="text-sm font-semibold text-gray-500"></span>
+                <button id="next-btn" onclick="nextQuestion()" class="bg-slate-900 hover:bg-slate-800 active:scale-95 text-white font-bold py-3 px-8 rounded-xl shadow-md transition duration-200 flex items-center gap-2">
+                    <span>السؤال التالي</span>
+                    <span class="text-lg">&larr;</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Result Screen -->
+        <section id="result-screen" class="p-6 sm:p-10 text-center hidden">
+            <div class="mb-6">
+                <div id="result-icon-container" class="w-24 h-24 mx-auto bg-green-50 rounded-full flex items-center justify-center text-green-600 shadow-inner">
+                    <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+            </div>
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-2">انتهى الاختبار!</h2>
+            <p class="text-gray-500 text-lg mb-6">نتيجتك النهائية هي:</p>
+            
+            <div class="inline-block bg-blue-50 border border-blue-100 rounded-2xl px-8 py-4 mb-6">
+                <div class="text-5xl sm:text-6xl font-black text-blue-600" id="final-score">0 / 30</div>
+                <div class="text-sm font-bold text-blue-500 mt-1" id="final-percentage">0%</div>
+            </div>
+            
+            <div id="feedback-message" class="text-lg font-medium text-gray-700 mb-8 max-w-md mx-auto leading-relaxed"></div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button onclick="location.reload()" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-bold py-3.5 px-8 rounded-xl shadow-lg shadow-blue-500/20 transition duration-200">
+                    🔄 إعادة الاختبار
+                </button>
+                <button onclick="shareScore()" id="share-btn" class="w-full sm:w-auto bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-3.5 px-8 rounded-xl transition duration-200">
+                    🔗 مشاركة نتيجتي
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const quizData = [
+            {
+                question: "ما هو المعنى الحرفي لاختصار SEO؟",
+                options: ["البحث عن مواقع الويب", "تحسين محركات البحث", "إعلانات جوجل المدفوعة", "برمجة تطبيقات الويب"],
+                correct: 1
+            },
+            {
+                question: "ما هي المرحلة الأولى في آلية عمل محركات البحث (Google)؟",
+                options: ["الترتيب (Ranking)", "الفهرسة (Indexing)", "الزحف (Crawling)", "التحليل (Analytics)"],
+                correct: 2
+            },
+            {
+                question: "ماذا تعني الفهرسة (Indexing)؟",
+                options: ["اختيار الصفحة لتكون في المركز الأول", "تخزين معلومات الصفحة في فهرس جوجل", "دفع المال لجوجل", "إنشاء روابط خارجية"],
+                correct: 1
+            },
+            {
+                question: "ما هو الفرق الرئيسي بين SEO و PPC (الإعلانات المدفوعة)؟",
+                options: ["SEO مجاني وطبيعي بينما PPC مدفوع", "لا يوجد فرق بينهما", "PPC مجاني و SEO مدفوع", "SEO مخصص فقط للهواتف"],
+                correct: 0
+            },
+            {
+                question: "أي نوع من الـ SEO يهتم بتحسين العناصر الموجودة داخل الصفحة نفسها؟",
+                options: ["Off-Page SEO", "Technical SEO", "On-Page SEO", "Local SEO"],
+                correct: 2
+            },
+            {
+                question: "أي وسم HTML يعتبر الأهم لعنوان الصفحة الرئيسي؟",
+                options: ["H3", "H1", "H6", "Title Tag"],
+                correct: 1
+            },
+            {
+                question: "ماذا يسمى تكرار الكلمة المفتاحية 50 مرة في المقال بشكل غير طبيعي؟",
+                options: ["On-Page SEO", "حشو الكلمات (Keyword Stuffing)", "الكلمات طويلة الذيل", "الفهرسة"],
+                correct: 1
+            },
+            {
+                question: "ماذا يعني مصطلح (Search Intent) نية البحث؟",
+                options: ["طول الكلمة المفتاحية", "سرعة الموقع", "ما يريده المستخدم فعلياً عندما يبحث", "عدد الروابط في الصفحة"],
+                correct: 2
+            },
+            {
+                question: "أي من التالي يعتبر مثالاً على Long-Tail Keyword (كلمة مفتاحية طويلة)؟",
+                options: ["Laravel", "لابتوب", "شرح Laravel للمبتدئين باللغة العربية", "برمجة"],
+                correct: 2
+            },
+            {
+                question: "ما هي الفائدة من الروابط الداخلية (Internal Links)؟",
+                options: ["مساعدة المستخدم ومحركات البحث على فهم بنية الموقع", "زيادة سرعة الموقع", "إخفاء الصفحات عن جوجل", "دفع المال لجوجل"],
+                correct: 0
+            },
+            {
+                question: "ما هو الوصف الذي يجب إضافته للصور لمساعدة محركات البحث على فهمها؟",
+                options: ["src", "alt (النص البديل)", "href", "title"],
+                correct: 1
+            },
+            {
+                question: "لماذا يجب عدم رفع صور كبيرة جداً (مثل 5MB) للموقع؟",
+                options: ["لأنها تحسن الأمان", "لأنها تؤثر سلبياً على سرعة الموقع", "لأن جوجل يحب الصور الكبيرة", "لأنها تزيد من الترتيب"],
+                correct: 1
+            },
+            {
+                question: "ما هي وظيفة ملف robots.txt الأساسية؟",
+                options: ["حماية الموقع من الاختراق", "تسريع الموقع", "تحديد تعليمات الزحف لبرامج الروبوت التابعة لمحركات البحث", "كتابة المحتوى"],
+                correct: 2
+            },
+            {
+                question: "هل يصح استخدام ملف robots.txt لإخفاء البيانات السرية والحساسة؟",
+                options: ["نعم، هو الطريقة الوحيدة", "لا، ليس وسيلة لحماية البيانات السرية", "نعم دائماً", "فقط في المتاجر الإلكترونية"],
+                correct: 1
+            },
+            {
+                question: "أي ملف يساعد محركات البحث على اكتشاف الروابط المهمة في الموقع؟",
+                options: ["Sitemap.xml", "robots.txt", "style.css", "index.html"],
+                correct: 0
+            },
+            {
+                question: "ما هي الأداة الأهم لمراقبة أداء الموقع ومشاكل الفهرسة في جوجل؟",
+                options: ["Google Analytics", "Google Search Console", "Google Trends", "Google Ads"],
+                correct: 1
+            },
+            {
+                question: "في مقاييس Core Web Vitals، ماذا يقيس LCP؟",
+                options: ["مدى استجابة الصفحة", "مقدار تحرك العناصر بشكل غير متوقع", "سرعة ظهور أكبر عنصر محتوى رئيسي", "عدد الزوار"],
+                correct: 2
+            },
+            {
+                question: "هل يجب أن يعمل الموقع بشكل ممتاز على الهاتف (Mobile SEO)؟",
+                options: ["لا، الكمبيوتر أهم", "فقط إذا كان متجراً", "نعم، لأن التوافق مع الهاتف أمر حتمي ومهم جداً", "لا يؤثر على الترتيب"],
+                correct: 2
+            },
+            {
+                question: "أي بروتوكول اتصال هو الأفضل والأكثر أماناً والمطلوب للـ SEO؟",
+                options: ["HTTP", "HTTPS", "FTP", "SMTP"],
+                correct: 1
+            },
+            {
+                question: "ماذا نستخدم لتحديد النسخة الأساسية إذا كان لدينا أكثر من رابط يؤدي لنفس المحتوى؟",
+                options: ["301 Redirect", "Canonical URL", "robots.txt", "Schema"],
+                correct: 1
+            },
+            {
+                question: "ماذا نستخدم لنقل المستخدم ومحرك البحث من رابط قديم إلى رابط جديد؟",
+                options: ["Canonical URL", "301 Redirect", "Meta Description", "Alt text"],
+                correct: 1
+            },
+            {
+                question: "ما هي التقنية التي تجعل الصفحة مؤهلة لظهور النتائج الغنية (Rich Results) في جوجل؟",
+                options: ["Structured Data / Schema", "Robots.txt", "LCP", "Keyword Stuffing"],
+                correct: 0
+            },
+            {
+                question: "ما هو العنصر الأهم في الـ Off-Page SEO؟",
+                options: ["الروابط الداخلية", "سرعة الموقع", "الروابط الخارجية (Backlinks)", "عنوان الصفحة"],
+                correct: 2
+            },
+            {
+                question: "في الروابط الخارجية (Backlinks)، أيهما أهم عادةً؟",
+                options: ["الكمية (عدد كبير من روابط ضعيفة)", "الجودة (رابط من مصدر موثوق وقوي)", "كلاهما مضر بالموقع", "لا تهم الروابط الخارجية"],
+                correct: 1
+            },
+            {
+                question: "ماذا تعني اختصارات E-E-A-T في تقييم جودة المحتوى؟",
+                options: ["Experience, Expertise, Authoritativeness, Trustworthiness", "Fast, Easy, Accessible, Trusted", "Engagement, Effort, Action, Time", "لا شيء مما سبق"],
+                correct: 0
+            },
+            {
+                question: "من أجل من يجب أن تكتب المحتوى في المقام الأول؟",
+                options: ["من أجل محركات البحث فقط", "من أجل المستخدم ليجد إجابة مفيدة", "من أجل زيادة الكلمات المفتاحية فقط", "من أجل المبرمجين"],
+                correct: 1
+            },
+            {
+                question: "هل تكرار نفس المحتوى بالكامل في عدة صفحات (Duplicate Content) يعتبر أمراً جيداً؟",
+                options: ["نعم، يزيد من الترتيب", "لا، قد يسبب مشاكل في اختيار الصفحة الأساسية والفهرسة", "لا يؤثر إطلاقاً", "نعم، لتعبئة الموقع"],
+                correct: 1
+            },
+            {
+                question: "لمن يكون الـ Local SEO مفيداً وضرورياً بشكل خاص؟",
+                options: ["للمدونات العالمية", "للأنشطة المحلية مثل المطاعم، العيادات، والمكاتب", "للمواقع التي لا تبيع شيئاً", "للمبرمجين فقط"],
+                correct: 1
+            },
+            {
+                question: "في المشاريع البرمجية والمواقع العربية، ما هو الأفضل لهيكلة الروابط (URLs)؟",
+                options: ["استخدام لغة عربية بحتة في الرابط", "استخدام URLs إنجليزية واضحة وثابتة", "استخدام أرقام عشوائية فقط", "استخدام رموز غريبة"],
+                correct: 1
+            },
+            {
+                question: "هل الـ SEO هو مهمة تقوم بها لمرة واحدة فقط وينتهي الأمر؟",
+                options: ["نعم، مرة واحدة تكفي", "لا، الـ SEO دورة وعملية مستمرة (قياس، تحليل، تحسين)", "نعم، عند إطلاق الموقع فقط", "فقط عند وجود مشكلة"],
+                correct: 1
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+        let answered = false;
+
+        const startScreen = document.getElementById('start-screen');
+        const quizScreen = document.getElementById('quiz-screen');
+        const resultScreen = document.getElementById('result-screen');
+        
+        const questionText = document.getElementById('question-text');
+        const optionsContainer = document.getElementById('options-container');
+        const questionTracker = document.getElementById('question-tracker');
+        const scoreTracker = document.getElementById('score-tracker');
+        const progressBar = document.getElementById('progress-bar');
+        const nextBtnContainer = document.getElementById('next-btn-container');
+        const nextBtn = document.getElementById('next-btn');
+        const feedbackHint = document.getElementById('feedback-hint');
+
+        function startQuiz() {
+            startScreen.classList.add('hidden');
+            quizScreen.classList.remove('hidden');
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            answered = false;
+            nextBtnContainer.classList.add('hidden');
+            feedbackHint.innerText = '';
+            
+            const q = quizData[currentQuestion];
+            questionText.innerText = `${currentQuestion + 1}. ${q.question}`;
+            questionTracker.innerHTML = `<span class="inline-block w-2.5 h-2.5 rounded-full bg-blue-500"></span> السؤال ${currentQuestion + 1} من ${quizData.length}`;
+            
+            const progress = ((currentQuestion) / quizData.length) * 100;
+            progressBar.style.width = `${progress}%`;
+
+            optionsContainer.innerHTML = '';
+            
+            q.options.forEach((option, index) => {
+                const button = document.createElement('button');
+                button.className = 'option-btn w-full text-right p-4 rounded-xl border-2 border-slate-200 bg-white text-gray-700 font-medium text-base sm:text-lg flex items-center justify-between';
+                button.innerHTML = `<span>${option}</span><span class="text-xs text-gray-400 font-mono">#${index + 1}</span>`;
+                button.onclick = () => checkAnswer(index, button);
+                optionsContainer.appendChild(button);
+            });
+        }
+
+        function checkAnswer(selectedIndex, buttonElement) {
+            if (answered) return;
+            answered = true;
+
+            const q = quizData[currentQuestion];
+            const allButtons = optionsContainer.children;
+
+            for (let i = 0; i < allButtons.length; i++) {
+                allButtons[i].disabled = true;
+                allButtons[i].classList.remove('hover:border-blue-500');
+                
+                if (i === q.correct) {
+                    allButtons[i].classList.add('correct');
+                } else if (i === selectedIndex) {
+                    allButtons[i].classList.add('wrong');
+                }
+            }
+
+            const isCorrect = (selectedIndex === q.correct);
+            if (isCorrect) {
+                score++;
+                scoreTracker.innerText = `النتيجة: ${score}`;
+                feedbackHint.innerHTML = '<span class="text-emerald-600 font-bold">✓ إجابة صحيحة! أحسنت</span>';
+            } else {
+                feedbackHint.innerHTML = '<span class="text-rose-600 font-bold">✗ إجابة غير صحيحة</span>';
+            }
+
+            if (currentQuestion === quizData.length - 1) {
+                nextBtn.innerHTML = `<span>إنهاء الاختبار وعرض النتيجة</span><span class="text-lg">🏁</span>`;
+            } else {
+                nextBtn.innerHTML = `<span>السؤال التالي</span><span class="text-lg">&larr;</span>`;
+            }
+
+            nextBtnContainer.classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < quizData.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            quizScreen.classList.add('hidden');
+            resultScreen.classList.remove('hidden');
+            
+            const finalScoreEl = document.getElementById('final-score');
+            const finalPercentageEl = document.getElementById('final-percentage');
+            const feedbackMessage = document.getElementById('feedback-message');
+            
+            finalScoreEl.innerText = `${score} / ${quizData.length}`;
+            const percentage = Math.round((score / quizData.length) * 100);
+            finalPercentageEl.innerText = `النسبة المئوية: ${percentage}%`;
+            
+            if (percentage >= 80 && typeof confetti === 'function') {
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+            }
+
+            if (percentage === 100) {
+                feedbackMessage.innerText = "🌟 ممتاز جداً! أنت محترف واستثنائي في أساسيات تحسين محركات البحث (SEO).";
+            } else if (percentage >= 80) {
+                feedbackMessage.innerText = "👏 رائع جداً! لديك قاعدة معرفية متينة وقوية جداً في عالم السيو.";
+            } else if (percentage >= 50) {
+                feedbackMessage.innerText = "👍 نتيجة جيدة! لكن لا يزال بإمكانك مراجعة بعض المفاهيم لتطوير خبرتك العملية.";
+            } else {
+                feedbackMessage.innerText = "📚 بداية جيدة! ننصحك بإعادة مراجعة المفاهيم الأساسية للسيو وخوض الاختبار مرة أخرى.";
+            }
+        }
+
+        function shareScore() {
+            const shareText = `لقد حصلت على ${score} من 30 (${Math.round((score/quizData.length)*100)}%) في اختبار أساسيات الـ SEO! اختبر معلوماتك الآن: ${window.location.href}`;
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(shareText).then(() => {
+                    const btn = document.getElementById('share-btn');
+                    btn.innerText = '✓ تم نسخ النتيجة!';
+                    setTimeout(() => { btn.innerText = '🔗 مشاركة نتيجتي'; }, 2500);
+                });
+            } else {
+                alert(shareText);
+            }
+        }
+    </script>
+</body>
+</html>
